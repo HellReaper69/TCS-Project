@@ -4,7 +4,10 @@ from PIL import Image
 from ocr_utils import preprocess_image, extract_text, extract_fields
 import pandas as pd
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+import os
+if os.name == 'nt':
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 
 st.set_page_config(page_title="Loan Document OCR", layout="centered")
 
